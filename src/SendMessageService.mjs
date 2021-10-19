@@ -7,9 +7,7 @@ export default class SendMessageService {
     this.pass = process.env.MAIL_PASS;
     this.host = process.env.MAIL_HOST;
     this.port = process.env.MAIL_PORT;
-  }
-  async sendErrors(obj) {
-    let transporter = nodemailer.createTransport({
+    this.transporter = nodemailer.createTransport({
       host: this.host,
       port: this.port,
       secure: false, // true for 465, false for other ports
@@ -18,8 +16,9 @@ export default class SendMessageService {
         pass: this.pass
       }
     });
-
-    await transporter.sendMail({
+  }
+  async sendErrors(obj) {
+    await this.transporter.sendMail({
       from: this.userFrom, // sender address
       to: this.userTo, // list of receivers
       subject: `[NODEJS FATAL ERROR] ${obj.pid}`, // Subject line
