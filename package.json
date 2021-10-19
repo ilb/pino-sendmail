@@ -1,0 +1,34 @@
+{
+  "name": "pino-sendmail",
+  "version": "1.0.0",
+  "description": "pino sendmail transport",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilb/pino-sendmail.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ilb/pino-sendmail/issues"
+  },
+  "homepage": "https://github.com/ilb/pino-sendmail#readme",
+  "dependencies": {
+    "pino-abstract-transport": "^0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-jest": "^25.2.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.3.0",
+    "pino": "^7.0.2",
+    "prettier": "^2.4.1"
+  }
+}
