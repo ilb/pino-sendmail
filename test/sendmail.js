@@ -1,10 +1,12 @@
 // import pinosendmail from '../src/index';
-import pino from 'pino';
+// import pino from 'pino';
+const pino = require('pino');
+
 const options = {
   transport: {
     pipeline: [
       {
-        target: '../src/index',
+        target: '../src/sendmail',
         level: 'error'
       }
     ]
