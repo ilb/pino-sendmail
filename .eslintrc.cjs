@@ -19,8 +19,24 @@ module.exports = {
     es6: true,
     'jest/globals': true
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended', 'plugin:jest/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
+    'plugin:jest/recommended'
+  ],
   rules: {
-    'prettier/prettier': ['error', {}, { usePrettierrc: true }]
+    'prettier/prettier': ['error', { endOfLine: 'auto' }, { usePrettierrc: true }],
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton']
+      }
+    ]
   }
 };
